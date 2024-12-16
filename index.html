@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber & Tattoo Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Black+Ops+One&display=swap" rel="stylesheet">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>HAG & INK  Barber&Tattoo Shop</h1>
+        <p>Experience Style, Class, and Ink</p>
+    </header>
+
+    <main>
+        
+        <section class="gallery">
+            <h2>Gallery</h2>
+            <div class="image-grid">
+                <!-- Replace "imageX.jpg" with your actual image paths -->
+                <img src="picture/Screenshot 2024-12-14 at 12.15.46 PM.png" alt="Gallery Image 1">
+                <img src="picture/Screenshot 2024-12-14 at 12.15.31 PM.png" alt="Gallery Image 2">
+                <img src="picture/Screenshot 2024-12-14 at 12.15.09 PM.png" alt="Gallery Image 3">
+                <img src="picture/Screenshot 2024-12-14 at 12.15.01 PM.png" alt="Gallery Image 4">
+                <img src="picture/Screenshot 2024-12-14 at 12.15.23 PM.png" alt="Gallery Image 4">
+                <img src="picture/Screenshot 2024-12-14 at 12.15.16 PM.png" alt="Gallery Image 4">
+                <img src="picture/Screenshot 2024-12-14 at 12.14.52 PM.png" alt="Gallery Image 4">
+                <img src="picture/Screenshot 2024-12-16 at 10.23.53 PM.png" alt="Gallery Image 4">
+                <img src="picture/Screenshot 2024-12-16 at 10.33.56 PM.png" alt="Gallery Image 4">
+                <img src="picture/Screenshot 2024-12-14 at 1.07.04 PM.png" alt="Gallery Image 4">
+                <img src="picture/Screenshot 2024-12-16 at 10.19.45 PM.png" alt="Gallery Image 4">
+                <img src="picture/Screenshot 2024-12-16 at 10.19.26 PM.png" alt="Gallery Image 4">
+                <img src="picture/Screenshot 2024-12-16 at 10.19.09 PM.png" alt="Gallery Image 4">
+                <img src="picture/Screenshot 2024-12-16 at 10.18.50 PM.png" alt="Gallery Image 4">
+                <img src="picture/Screenshot 2024-12-16 at 10.46.22 PM.png" alt="Gallery Image 4">
+
+            </div>
+        </section>
+
+        <section class="reservation">
+            <h2>Make a Reservation</h2>
+            <form id="reservation-form">
+                <!-- Name Field -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+        
+                <!-- Service Selection -->
+                <label for="service">Service:</label>
+                <select id="service" name="service" required>
+                    <option value="haircut">Haircut</option>
+                    <option value="tattoo">Tattoo</option>
+                </select>
+        
+                <!-- Date Field -->
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+        
+                <!-- Time Field -->
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+        
+                <!-- Submit Button linked to WhatsApp -->
+                <a id="book-button" href="#" target="_blank" class="btn">Book Now</a>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p> 2024 Hag & Ink Barber, Tattoo Shop | &copy ROBUST CODE </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function redirectToWhatsApp(event) {
+            event.preventDefault(); // Empêche le comportement par défaut du formulaire
+
+            // Récupère les valeurs des champs du formulaire
+            const name = document.getElementById("name").value;
+            const service = document.getElementById("service").value;
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
+
+            // Message formaté pour WhatsApp
+            const message = `Hello, I would like to make a reservation:\n\n*Name:* ${name}\n*Service:* ${service}\n*Date:* ${date}\n*Time:* ${time}`;
+
+            // URL de redirection WhatsApp avec ton numéro
+            const phoneNumber = "+243857745517"; // Remplace par ton numéro WhatsApp en format international sans "+" ni espace
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            // Redirige vers WhatsApp
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+</body>
+</html>
