@@ -19,7 +19,7 @@ document.getElementById('book-button').addEventListener('click', function (e) {
     const time = document.getElementById('time').value;
 
     // Your WhatsApp number in international format (e.g., 123456789)
-    const phoneNumber = "+243856374446"; 
+    const phoneNumber = "+15672152314"; 
 
     // Pre-filled message with the form data
     const message = `Hello, my name is ${name}. I would like to book a ${service} on ${date} at ${time}.`;
